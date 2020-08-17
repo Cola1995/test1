@@ -41,12 +41,22 @@ def test2():
     # https://www.showapi.com/apiGateway/view/?apiCode=184&pointCode=4
     #from ShowapiRequest import ShowapiRequest
     from lib.ShowapiRequest import ShowapiRequest
+    # r = ShowapiRequest("http://route.showapi.com/184-4", "272526", "a924d4e982ae404b8a068b4d1c7784f2")
+    # r.addFilePara("image", "test.png")
+    # r.addBodyPara("typeId", "34")
+    # r.addBodyPara("convert_to_jpg", "0")
+    # r.addBodyPara("needMorePrecise", "0")
+    # res = r.post()
+    # print(res.text)  # 返回信息
+    # print(res.json()['showapi-res_body'])
     r = ShowapiRequest("http://route.showapi.com/184-4", "328507", "e8bbff9dba8f43aeb834652b8959844b")
     r.addFilePara("image", "test.png")
     r.addBodyPara("typeId", "34")
     r.addBodyPara("convert_to_jpg", "0")
     r.addBodyPara("needMorePrecise", "0")
     res = r.post()
-    print(res.text)  # 返回信息
-    print(res.json()['showapi-res_body'])
+    result = res.text
+    print(result)
+    body = res.json()['showapi_res_body']
+    print(body['Result'])
 
