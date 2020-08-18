@@ -23,5 +23,40 @@ class TestUserLogin():
         assert alert.text == expected
         alert.accept()
         time.sleep(5)
+        # self.driver.close()
+        # self.driver.quit()
+
+    def test_user_empty(self):
+        """
+        测试用户名为空
+        """
+        username = ""
+        pwd ="123"
+        expected ="账号不能为空"
+        self.driver.find_element_by_name("user").clear()
+        self.driver.find_element_by_name("user").send_keys(username)
+        self.driver.find_element_by_name("pwd").clear()
+        self.driver.find_element_by_name("pwd").send_keys(pwd)
+        self.driver.find_element_by_class_name("btn").click()
+        WebDriverWait(self.driver,5).until(EC.alert_is_present())
+        alert  = self.driver.switch_to.alert
+        assert alert.text == expected
+        alert.accept()
+
+
+    def test_user_login_success(self):
+        username = "ma"
+        pwd = "qwerdf886."
+        expected = "用户中心"
+        self.driver.find_element_by_name("user").clear()
+        self.driver.find_element_by_name("user").send_keys(username)
+        self.driver.find_element_by_name("pwd").clear()
+        self.driver.find_element_by_name("pwd").send_keys(pwd)
+        self.driver.find_element_by_class_name("btn").click()
+        WebDriverWait(self.driver, 5).until(EC.title_is(expected))
+        title = self.driver.title
+        print(title)
+        assert title == expected
+        time.sleep(5)
         self.driver.close()
         self.driver.quit()
