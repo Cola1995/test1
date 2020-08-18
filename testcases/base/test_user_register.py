@@ -8,7 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 class TestUserRegister():
     def __init__(self):
         self.driver = webdriver.Chrome()
-        self.driver.get("http://localhost:8080/jpress/user/register")
+        self.driver.get("http://10.41.4.47:8080/jpress/user/register")
         self.driver.maximize_window()
     def test_register_code_error(self):
         username  = "test01"
