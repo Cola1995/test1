@@ -4,7 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 from util.util import get_code
 
-class TestAdminLogin():
+class TestAdminLogin(object):
     def __init__(self):
         self.driver = webdriver.Chrome()
         self.driver.get("http://10.41.4.47:8080/jpress/admin/login")
@@ -35,6 +35,6 @@ class TestAdminLogin():
         WebDriverWait(self.driver, 5).until(EC.title_is(expected))
         title = self.driver.title
         assert title == expected
-        time.sleep(5)
-        self.driver.close()
-        self.driver.quit()
+        time.sleep(3)
+        # self.driver.close()
+        # self.driver.quit()
