@@ -43,11 +43,8 @@ class TestAdminAddCategory():
         loc = (By.CLASS_NAME, 'toast-message')
 
         WebDriverWait(self.login.driver, 5).until(EC.visibility_of_element_located(loc))
-
         msg = self.login.driver.find_element(*loc).text
-
         assert msg == expected
         sleep(3)
         self.login.driver.close()
-
         self.login.driver.quit()

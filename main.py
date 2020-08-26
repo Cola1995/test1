@@ -7,6 +7,7 @@ from testcases import testcase1
 from testcases.base.test_user_register import TestUserRegister
 from testcases.base.test_user_login import TestUserLogin
 from testcases.base.test_admin_login import TestAdminLogin
+from testcases.base.test_article import TestArticle
 from testcases.base.test_admin_add_category import TestAdminAddCategory
 
 if __name__ == '__main__':
@@ -26,10 +27,16 @@ if __name__ == '__main__':
     # t1 = TestAdminLogin()
     # t1.test_admin_login_code_empty()
     # t1.test_admin_login_success()
+
+    # 测试添加分类
+    # login = TestAdminLogin()
+    # login.test_admin_login_success()
+    # t1 = TestAdminAddCategory(login)
+    # t1.test_add_catagory_error()
+
     login = TestAdminLogin()
     login.test_admin_login_success()
-
-    t1 = TestAdminAddCategory(login)
-    t1.test_add_catagory_error()
+    t1 = TestArticle(login)
+    t1.test_add_article()
 
 

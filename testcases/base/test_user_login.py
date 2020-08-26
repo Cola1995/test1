@@ -6,7 +6,7 @@ from selenium import webdriver
 class TestUserLogin():
     def __init__(self):
         self.driver = webdriver.Chrome()
-        self.driver.get("http://10.41.4.47:8080/jpress/user/login")
+        self.driver.get("http://localhost:8080/jpress/user/login")
         self.driver.maximize_window()
     def test_user_login_error(self):
         """
