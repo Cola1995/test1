@@ -60,8 +60,8 @@ class TestUserLogin(unittest.TestCase):
 
 
     def test_user_login_success(self):
-        username = "ma"
-        pwd = "qwerdf886."
+        username = "admin"
+        pwd = "admin123!"
         expected = "用户中心"
         self.driver.find_element_by_name("user").clear()
         self.driver.find_element_by_name("user").send_keys(username)
