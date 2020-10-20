@@ -45,8 +45,8 @@ class TestUserLogin():
 
 
     def test_user_login_success(self):
-        username = "ma"
-        pwd = "qwerdf886."
+        username = "admin"
+        pwd = "1234556"
         expected = "用户中心"
         self.driver.find_element_by_name("user").clear()
         self.driver.find_element_by_name("user").send_keys(username)
@@ -60,3 +60,7 @@ class TestUserLogin():
         time.sleep(5)
         self.driver.close()
         self.driver.quit()
+
+if __name__ == '__main__':
+    login = TestUserLogin()
+    login.test_user_login_success()

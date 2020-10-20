@@ -25,7 +25,9 @@ def get_code(driver, id):
     #print(left, top, height, right)
     im = Image.open(pic_name)
     #   560 448
-    img = im.crop((left, top, right, height))
+    # 获取windows分辨率缩放比例
+    dpr = driver.execute_script('return window.devicePixelRatio')
+    img = im.crop((left*dpr, top*dpr, right*dpr, height*dpr))
     #     img = im.crop((783,470,108,height))
 
     t = time.time()

@@ -8,6 +8,8 @@ from testcases.base.test_user_register import TestUserRegister
 from testcases.base.test_user_login import TestUserLogin
 from testcases.base.test_admin_login import TestAdminLogin
 from testcases.base.test_article import TestArticle
+# from testcases.unittest.test_admin_login import TestAdminLogin
+# from testcases.unittest.test_article import TestArticle
 from testcases.base.test_admin_add_category import TestAdminAddCategory
 
 if __name__ == '__main__':
@@ -36,7 +38,7 @@ if __name__ == '__main__':
 
     login = TestAdminLogin()
     login.test_admin_login_success()
-    t1 = TestArticle(login)
-    t1.test_add_article()
+    # t1 = TestArticle(login)
+    # t1.test_add_article()
 
 

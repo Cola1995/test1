@@ -40,3 +40,7 @@ class TestAdminLogin(object):
         time.sleep(3)
         # self.driver.close()
         # self.driver.quit()
+
+if __name__ == '__main__':
+    login = TestAdminLogin()
+    login.test_admin_login_success()
