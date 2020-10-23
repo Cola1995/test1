@@ -7,7 +7,7 @@ from util.util import get_code
 class TestAdminLogin(object):
     def __init__(self):
         self.driver = webdriver.Chrome()
-        self.driver.get("http://localhost:8080/jpress/admin/login")
+        self.driver.get("http://10.41.4.47:8080/jpress/admin/login")
         self.driver.maximize_window()
     def test_admin_login_code_empty(self):
         username = 'admin'
@@ -25,7 +25,7 @@ class TestAdminLogin(object):
     def test_admin_login_success(self):
         username = "admin"
         # pwd = "admin123!"
-        pwd = "123456"
+        pwd = "admin123!"
         expected = "JPress后台"
         code = get_code(self.driver,"captchaImg")
         self.driver.find_element_by_name("user").clear()
@@ -41,6 +41,6 @@ class TestAdminLogin(object):
         # self.driver.close()
         # self.driver.quit()
 
-if __name__ == '__main__':
-    login = TestAdminLogin()
-    login.test_admin_login_success()
+# if __name__ == '__main__':
+#     login = TestAdminLogin()
+#     login.test_admin_login_success()

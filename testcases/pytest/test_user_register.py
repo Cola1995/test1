@@ -15,9 +15,11 @@ class TestUserRegister(object):
     #     self.driver.maximize_window()
     def setup_class(self):
         self.driver = webdriver.Chrome()
-        self.driver.get("http://localhost:8080/jpress/user/register")
+        self.driver.get("http://10.41.4.47:8080/jpress/user/register")
         self.driver.maximize_window()
-
+    def teardown_class(self):
+        self.driver.close()
+        self.driver.quit()
 
     def test1_register_code_error(self):
         username  = "test01"
