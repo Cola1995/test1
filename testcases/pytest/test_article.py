@@ -6,6 +6,7 @@ from time import sleep
 import pytest
 
 from testcases.pytest.test_admin_login import TestAdminLogin
+
 from util import util
 
 
@@ -13,7 +14,7 @@ class TestArticle(object):
 
     def setup_class(self):
         self.login = TestAdminLogin()
-        self.logger=util.get_logger()
+        self.logger = util.get_logger()
 
     def teardown_class(self):
         self.login.driver.close()
